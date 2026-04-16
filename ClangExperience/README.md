@@ -7,7 +7,7 @@
 ```objc
 //
 //  main.m
-//  Main
+//  ClangExperience
 //
 //  Created by Janlor on 4/7/26.
 //
@@ -26,7 +26,7 @@ int main(int argc, const char * argv[]) {
 打开终端 Terminal，进入存放 main.m 的目录
 
 ```bash
-cd ./ClangFirstExperience/ClangFirstExperience
+cd ./ClangExperience/ClangExperience
 ```
 
 通过 -ccc-print-phases 命令查看整个编译过程
@@ -36,7 +36,7 @@ clang -ccc-print-phases main.m
 ```
 
 ```bash
-janlor@MacBook-Pro ClangFirstExperience % clang -ccc-print-phases main.m
+janlor@MacBook-Pro ClangExperience % clang -ccc-print-phases main.m
                +- 0: input, "main.m", objective-c
             +- 1: preprocessor, {0}, objective-c-cpp-output
          +- 2: compiler, {1}, ir
@@ -67,7 +67,7 @@ clang -fmodules -fsyntax-only -Xclang -dump-tokens main.m
 ```
 
 ```dash
-janlor@MacBook-Pro ClangFirstExperience % clang -fmodules -fsyntax-only -Xclang -dump-tokens main.m
+janlor@MacBook-Pro ClangExperience % clang -fmodules -fsyntax-only -Xclang -dump-tokens main.m
 annot_module_include		Loc=<main.m:8:1>
 int 'int'	 [StartOfLine]	Loc=<main.m:10:1>
 identifier 'main'	 [LeadingSpace]	Loc=<main.m:10:5>
@@ -107,7 +107,7 @@ clang -fmodules -fsyntax-only -Xclang -ast-dump main.m
 ```
 
 ```cpp
-janlor@MacBook-Pro ClangFirstExperience % clang -fmodules -fsyntax-only -Xclang -ast-dump main.m   
+janlor@MacBook-Pro ClangExperience % clang -fmodules -fsyntax-only -Xclang -ast-dump main.m   
 TranslationUnitDecl 0xbb508b008 <<invalid sloc>> <invalid sloc> <undeserialized declarations>
 |-TypedefDecl 0xbb51f4018 <<invalid sloc>> <invalid sloc> implicit __int128_t '__int128'
 | `-BuiltinType 0xbb508b5d0 '__int128'
@@ -259,7 +259,7 @@ TranslationUnitDecl 0xbb508b008 <<invalid sloc>> <invalid sloc> <undeserialized 
 clang -S -fobjc-arc -emit-llvm main.m -o main-3.ll
 ```
 
-[生成的 main.ll 文件](./ClangFirstExperience/main-3.ll)
+[生成的 main.ll 文件](./ClangExperience/main-3.ll)
 
 ### 4. 编译优化 main.ll 文件
 
@@ -267,7 +267,7 @@ clang -S -fobjc-arc -emit-llvm main.m -o main-3.ll
 clang -O3 -S -fobjc-arc -emit-llvm main.m -o main.ll
 ```
 
-[生成的 main.ll 文件](./ClangFirstExperience/main.ll)
+[生成的 main.ll 文件](./ClangExperience/main.ll)
 
 ### 5. 如果开启了 bitcode，那么再进一步优化，生成 bitcode 文件 main.bc
 
@@ -275,7 +275,7 @@ clang -O3 -S -fobjc-arc -emit-llvm main.m -o main.ll
 clang -emit-llvm -c main.m -o main.bc
 ```
 
-[生成的 main.bc 文件](./ClangFirstExperience/main.bc)
+[生成的 main.bc 文件](./ClangExperience/main.bc)
 
 ### 6. 生成汇编语言 main.s
 
@@ -283,7 +283,7 @@ clang -emit-llvm -c main.m -o main.bc
 clang -S -fobjc-arc main.m -o main.s
 ```
 
-[生成的 main.s 文件](./ClangFirstExperience/main.s)
+[生成的 main.s 文件](./ClangExperience/main.s)
 
 ### 7. 生成目标代码文件 main.o
 
@@ -291,7 +291,7 @@ clang -S -fobjc-arc main.m -o main.s
 clang -fmodules -c main.m -o main.o 
 ```
 
-[生成的 main.o 文件](./ClangFirstExperience/main.o)
+[生成的 main.o 文件](./ClangExperience/main.o)
 
 ### 8. 生成可执行的二进制文件 main
 
@@ -299,7 +299,7 @@ clang -fmodules -c main.m -o main.o
 clang main.o -o main
 ```
 
-[生成的 main 文件](./ClangFirstExperience/main)
+[生成的 main 文件](./ClangExperience/main)
 
 ### 9. 执行 main 文件
 

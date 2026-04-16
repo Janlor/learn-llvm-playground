@@ -19,13 +19,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		7AF60D622F90C862000E19A6 /* ClangFirstExperience */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ClangFirstExperience; sourceTree = BUILT_PRODUCTS_DIR; };
+		7AF60D622F90C862000E19A6 /* ClangExperience */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ClangExperience; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		7AF60D642F90C862000E19A6 /* ClangFirstExperience */ = {
+		7AF60D642F90C862000E19A6 /* ClangExperience */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = ClangFirstExperience;
+			path = ClangExperience;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -44,7 +44,7 @@
 		7AF60D592F90C862000E19A6 = {
 			isa = PBXGroup;
 			children = (
-				7AF60D642F90C862000E19A6 /* ClangFirstExperience */,
+				7AF60D642F90C862000E19A6 /* ClangExperience */,
 				7AF60D632F90C862000E19A6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -52,7 +52,7 @@
 		7AF60D632F90C862000E19A6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7AF60D622F90C862000E19A6 /* ClangFirstExperience */,
+				7AF60D622F90C862000E19A6 /* ClangExperience */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -60,9 +60,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		7AF60D612F90C862000E19A6 /* ClangFirstExperience */ = {
+		7AF60D612F90C862000E19A6 /* ClangExperience */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7AF60D692F90C862000E19A6 /* Build configuration list for PBXNativeTarget "ClangFirstExperience" */;
+			buildConfigurationList = 7AF60D692F90C862000E19A6 /* Build configuration list for PBXNativeTarget "ClangExperience" */;
 			buildPhases = (
 				7AF60D5E2F90C862000E19A6 /* Sources */,
 				7AF60D5F2F90C862000E19A6 /* Frameworks */,
@@ -73,13 +73,13 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				7AF60D642F90C862000E19A6 /* ClangFirstExperience */,
+				7AF60D642F90C862000E19A6 /* ClangExperience */,
 			);
-			name = ClangFirstExperience;
+			name = ClangExperience;
 			packageProductDependencies = (
 			);
 			productName = ClangFirstExperience;
-			productReference = 7AF60D622F90C862000E19A6 /* ClangFirstExperience */;
+			productReference = 7AF60D622F90C862000E19A6 /* ClangExperience */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -96,7 +96,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 7AF60D5D2F90C862000E19A6 /* Build configuration list for PBXProject "ClangFirstExperience" */;
+			buildConfigurationList = 7AF60D5D2F90C862000E19A6 /* Build configuration list for PBXProject "ClangExperience" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -110,7 +110,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				7AF60D612F90C862000E19A6 /* ClangFirstExperience */,
+				7AF60D612F90C862000E19A6 /* ClangExperience */,
 			);
 		};
 /* End PBXProject section */
@@ -266,7 +266,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		7AF60D5D2F90C862000E19A6 /* Build configuration list for PBXProject "ClangFirstExperience" */ = {
+		7AF60D5D2F90C862000E19A6 /* Build configuration list for PBXProject "ClangExperience" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7AF60D672F90C862000E19A6 /* Debug */,
@@ -275,7 +275,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7AF60D692F90C862000E19A6 /* Build configuration list for PBXNativeTarget "ClangFirstExperience" */ = {
+		7AF60D692F90C862000E19A6 /* Build configuration list for PBXNativeTarget "ClangExperience" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7AF60D6A2F90C862000E19A6 /* Debug */,
