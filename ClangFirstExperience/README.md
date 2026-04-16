@@ -32,6 +32,10 @@ cd ./ClangFirstExperience/ClangFirstExperience
 通过 -ccc-print-phases 命令查看整个编译过程
 
 ```bash
+clang -ccc-print-phases main.m
+```
+
+```bash
 janlor@MacBook-Pro ClangFirstExperience % clang -ccc-print-phases main.m
                +- 0: input, "main.m", objective-c
             +- 1: preprocessor, {0}, objective-c-cpp-output
@@ -57,6 +61,10 @@ janlor@MacBook-Pro ClangFirstExperience % clang -ccc-print-phases main.m
 上面对程序的编译过程可以分为以下几个阶段，使用 Clang 指令描述：
 
 ### 1. 词法分析
+
+```bash
+clang -fmodules -fsyntax-only -Xclang -dump-tokens main.m
+```
 
 ```dash
 janlor@MacBook-Pro ClangFirstExperience % clang -fmodules -fsyntax-only -Xclang -dump-tokens main.m
@@ -93,6 +101,10 @@ eof ''		Loc=<main.m:16:2>
 ```
 
 ### 2. 语法分析并生成 AST
+
+```dash
+clang -fmodules -fsyntax-only -Xclang -ast-dump main.m
+```
 
 ```cpp
 janlor@MacBook-Pro ClangFirstExperience % clang -fmodules -fsyntax-only -Xclang -ast-dump main.m   
@@ -244,7 +256,7 @@ TranslationUnitDecl 0xbb508b008 <<invalid sloc>> <invalid sloc> <undeserialized 
 ### 3. 生成中间代码文件 main.ll
 
 ```dash
-janlor@MacBook-Pro ClangFirstExperience % clang -S -fobjc-arc -emit-llvm main.m -o main-3.ll
+clang -S -fobjc-arc -emit-llvm main.m -o main-3.ll
 ```
 
 [生成的 main.ll 文件](./ClangFirstExperience/main-3.ll)
@@ -252,7 +264,7 @@ janlor@MacBook-Pro ClangFirstExperience % clang -S -fobjc-arc -emit-llvm main.m 
 ### 4. 编译优化 main.ll 文件
 
 ```dash
-janlor@MacBook-Pro ClangFirstExperience % clang -O3 -S -fobjc-arc -emit-llvm main.m -o main.ll
+clang -O3 -S -fobjc-arc -emit-llvm main.m -o main.ll
 ```
 
 [生成的 main.ll 文件](./ClangFirstExperience/main.ll)
@@ -260,7 +272,7 @@ janlor@MacBook-Pro ClangFirstExperience % clang -O3 -S -fobjc-arc -emit-llvm mai
 ### 5. 如果开启了 bitcode，那么再进一步优化，生成 bitcode 文件 main.bc
 
 ```dash
-janlor@MacBook-Pro ClangFirstExperience % clang -emit-llvm -c main.m -o main.bc
+clang -emit-llvm -c main.m -o main.bc
 ```
 
 [生成的 main.bc 文件](./ClangFirstExperience/main.bc)
@@ -268,7 +280,7 @@ janlor@MacBook-Pro ClangFirstExperience % clang -emit-llvm -c main.m -o main.bc
 ### 6. 生成汇编语言 main.s
 
 ```dash
-janlor@MacBook-Pro ClangFirstExperience % clang -S -fobjc-arc main.m -o main.s
+clang -S -fobjc-arc main.m -o main.s
 ```
 
 [生成的 main.s 文件](./ClangFirstExperience/main.s)
@@ -276,7 +288,7 @@ janlor@MacBook-Pro ClangFirstExperience % clang -S -fobjc-arc main.m -o main.s
 ### 7. 生成目标代码文件 main.o
 
 ```dash
-janlor@MacBook-Pro ClangFirstExperience % clang -fmodules -c main.m -o main.o 
+clang -fmodules -c main.m -o main.o 
 ```
 
 [生成的 main.o 文件](./ClangFirstExperience/main.o)
@@ -284,7 +296,7 @@ janlor@MacBook-Pro ClangFirstExperience % clang -fmodules -c main.m -o main.o
 ### 8. 生成可执行的二进制文件 main
 
 ```dash
-janlor@MacBook-Pro ClangFirstExperience % clang main.o -o main
+clang main.o -o main
 ```
 
 [生成的 main 文件](./ClangFirstExperience/main)
@@ -292,7 +304,10 @@ janlor@MacBook-Pro ClangFirstExperience % clang main.o -o main
 ### 9. 执行 main 文件
 
 ```dash
-janlor@MacBook-Pro ClangFirstExperience % ./main
+./main
+```
+
+```
 2026-04-07 14:43:18.221 main[2242:151082] Hello, World!
 ```
 
