@@ -308,7 +308,7 @@ clang main.o -o main
 ```
 
 ```
-2026-04-07 14:43:18.221 main[2242:151082] Hello, World!
+Hello, World!
 ```
 
 ## 常用指令集
